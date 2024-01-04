@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup"
+
+    android:orientation="vertical"
+    tools:context=".SignUp">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/greybackground"
+
+        app:helperText="*Recquired"
+        app:helperTextTextColor="#FF0000"
+        app:startIconDrawable="@drawable/baseline_person_2_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/greybackground"
+            android:hint="        Name"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/greybackground"
+
+        app:helperText="*Recquired"
+        app:helperTextTextColor="#FF0000"
+        app:startIconDrawable="@drawable/baseline_lock_person_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/uniid"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/greybackground"
+            android:hint="        Unique Id"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/greybackground"
+
+        app:helperText="*Recquired"
+        app:helperTextTextColor="#FF0000"
+        app:startIconDrawable="@drawable/baseline_mail_lock_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/greybackground"
+            android:hint="        Email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/greybackground"
+        app:endIconMode="password_toggle"
+        app:helperText="*Recquired"
+        app:helperTextTextColor="#FF0000"
+        app:startIconDrawable="@drawable/baseline_format_list_numbered_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/greybackground"
+            android:hint="        Password"
+            android:inputType="numberPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:backgroundTint="#BA83E7"
+        android:text="SignUp"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
