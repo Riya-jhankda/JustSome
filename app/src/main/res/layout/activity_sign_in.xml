@@ -12,7 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="420dp"
         android:background="@drawable/greybackground"
         app:helperText="*Recquired"
         app:helperTextTextColor="#FF0000"
@@ -23,8 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
 
-            android:hint="        Unique Id"
-            android:inputType="numberPassword" />
+            android:hint="        Unique Id" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -34,7 +33,7 @@
         android:layout_gravity="center"
         android:layout_margin="15dp"
         android:backgroundTint="#521981"
-        android:text="SignUp"
+        android:text="Sign In"
         android:textSize="18dp" />
 
 </LinearLayout>

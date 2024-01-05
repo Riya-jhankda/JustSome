@@ -95,10 +95,19 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_margin="30dp"
-        android:backgroundTint="#BA83E7"
+        android:layout_margin="25dp"
+        android:backgroundTint="#5E1B95"
         android:text="SignUp"
         android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/signintv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account ? Sing In"
+        android:textStyle="italic"
+        android:textSize="15dp"
+        android:layout_gravity="center"/>
 
 
 </LinearLayout>

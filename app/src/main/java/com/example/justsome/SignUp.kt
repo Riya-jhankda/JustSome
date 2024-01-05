@@ -1,8 +1,10 @@
 package com.example.justsome
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.Firebase
@@ -34,10 +36,19 @@ class SignUp : AppCompatActivity() {
             database.child(id).setValue(user).addOnSuccessListener {
                 et_name.text?.clear()
                 Toast.makeText(this,"User Registered Sucessfully",Toast.LENGTH_SHORT).show()
-            }.addOnSuccessListener {
+                val intenttohomeact=Intent(this,HomeActivity::class.java)
+                startActivity(intenttohomeact)
+            }.addOnFailureListener {
                 Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
             }
 
+
+        }
+
+        val signintext=findViewById<TextView>(R.id.signintv)
+        signintext.setOnClickListener{
+            val opensignin=Intent(this,signIn::class.java)
+            startActivity(opensignin)
         }
     }
 }
