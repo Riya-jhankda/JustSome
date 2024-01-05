@@ -13,6 +13,12 @@ import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
 
+    companion object{
+        const val KEY1="package com.example.justsome.SignUp.name"
+        const val KEY2="package com.example.justsome.SignUp.mail"
+        const val KEY3="package com.example.justsome.SignUp.id"
+    }
+
     lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,12 +42,18 @@ class SignUp : AppCompatActivity() {
             database.child(id).setValue(user).addOnSuccessListener {
                 et_name.text?.clear()
                 Toast.makeText(this,"User Registered Sucessfully",Toast.LENGTH_SHORT).show()
-                val intenttohomeact=Intent(this,HomeActivity::class.java)
-                startActivity(intenttohomeact)
+
             }.addOnFailureListener {
                 Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
             }
 
+            val StringUserId=et_id.text.toString()
+            if(StringUserId.isNotEmpty()){
+                readDataup(StringUserId)
+            }
+            else{
+                Toast.makeText(this,"Enter User Id",Toast.LENGTH_SHORT).show()
+            }
 
         }
 
@@ -49,6 +61,32 @@ class SignUp : AppCompatActivity() {
         signintext.setOnClickListener{
             val opensignin=Intent(this,signIn::class.java)
             startActivity(opensignin)
+        }
+    }
+
+    private fun readDataup(stringUserId: String) {
+        database= FirebaseDatabase.getInstance().getReference("User")
+        database.child(stringUserId).get().addOnSuccessListener {
+
+            //if user does exists or not
+            if(it.exists()){
+                val email = it.child("mail").value
+                val name = it.child("name").value
+                val userId = it.child("id").value
+
+                val intenttoHome= Intent(this,HomeActivity::class.java)
+                intenttoHome.putExtra(signIn.KEY2,email.toString())
+                intenttoHome.putExtra(signIn.KEY1,name.toString())
+                intenttoHome.putExtra(signIn.KEY3,userId.toString())
+                startActivity(intenttoHome)
+
+            }
+            else{
+                Toast.makeText(this,"Error!! Sign Up again.",Toast.LENGTH_SHORT).show()
+            }
+
+        }.addOnFailureListener{
+            Toast.makeText(this,"Failed!!",Toast.LENGTH_SHORT).show()
         }
     }
 }
